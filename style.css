@@ -31,31 +31,9 @@ header {
   flex-wrap: wrap;
 }
 
-.logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
 
 header h1 {
   font-size: 28px;
-  color: #0095ff;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a:hover {
   color: #0095ff;
 }
 
@@ -120,10 +98,6 @@ footer {
     align-items: center;
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
 
   .players {
     flex-direction: column;
@@ -154,16 +128,48 @@ footer {
   animation: fadeInUp 1s ease-in-out;
 }
 
-nav a,
-.player img {
-  transition: transform 0.3s ease, color 0.3s ease;
-}
 
-nav a:hover,
-.player:hover img {
-  transform: scale(1.1);
-}
 
 .player:hover {
   box-shadow: 0 0 15px #0095ff;
 }
+
+/* Horizontal scroll container */
+.team-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.team-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+/* Player card */
+.player {
+    background: #222;
+    border-radius: 10px;
+    min-width: 200px;
+    max-width: 200px;
+    flex: 0 0 auto;
+    box-shadow: 0 0 10px #1e90ff;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.player img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.player:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #1e90ff, 0 0 40px #1e90ff;
+}
+
